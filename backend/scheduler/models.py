@@ -7,7 +7,7 @@ from datetime import datetime
 class Coach(models.Model):
     name = models.CharField(max_length=120, unique=True)
     
-    def _str_(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -17,7 +17,7 @@ class Coach(models.Model):
 class Student(models.Model):
     name = models.CharField(max_length=120, unique=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.name
 
 
@@ -29,9 +29,8 @@ class TimeSlot(models.Model):
     student_satisfaction = models.IntegerField(null=True, blank=True, validators=[MaxValueValidator(5), MinValueValidator(1)])
     coach_notes = models.TextField(default='', blank=True)
 
-    def _str_(self):
-        return self.time
-
+    def __str__(self):
+        return str(self.start_time)
 
 
 

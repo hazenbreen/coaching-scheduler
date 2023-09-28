@@ -64,6 +64,7 @@ class App extends React.Component {
           <Scheduler
             cellDuration={120}
             allDayPanelMode={'hidden'}
+            textExpr="student"
             onAppointmentFormOpening={this.onAppointmentFormOpening}
             onAppointmentUpdated={this.onAppointmentUpdated}
             dataSource={this.state.timeSlots}
